@@ -10,7 +10,7 @@ let profile = require('./profile.json');
 fs.readdir('./cmds/',(err,files)=>{
     if(err) console.log(err);
     let jsfiles = files.filter(f => f.split(".").pop() === "js");
-    if(jsfiles.length <=0) console.log("Нет комманд для загрузки!!");
+    if(jsfiles.length <= 0) console.log("Нет комманд для загрузки!!");
     console.log(`Загружено ${jsfiles.length} комманд`);
     jsfiles.forEach((f,i) =>{
         let props = require(`./cmds/${f}`);
@@ -43,7 +43,7 @@ bot.on('ready', () => {
             }
         }
 
-    },5000)
+    }, 5000)
 
 });
 bot.on('guildMemberAdd',(member)=>{
