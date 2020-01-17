@@ -7,10 +7,11 @@ module.exports.run = async (bot,message,args) => {
     u.coins += 500;
     u.lvl++;
 
+    message.delete().catch();
     let embed = new Discord.RichEmbed()
-    .setDescription("Купон фаната")
+    .setDescription("Купон охотника за пасхалками")
     .setColor('#e22216')
-    .addField("Получено","500 опыта")
+    .addField("Получено","500 коинов")
     .addField("Бонус","Повышен уровень");
     message.channel.send(embed);
 
@@ -19,5 +20,5 @@ module.exports.run = async (bot,message,args) => {
     });
 };
 module.exports.help = {
-    name: "dexmp3"
+    name: "pashunter100801"
 };
