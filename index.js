@@ -51,7 +51,7 @@ bot.on('guildMemberAdd',(member)=>{
     member.addRole(role);
 });
 
-bot.on('message', message => {
+bot.on('message', async message => {
     if(message.author.bot) return;
     if(message.channel.type == "dm") return;
     let uid = message.author.id;
