@@ -1,6 +1,6 @@
 const Discord = module.require("discord.js");
 const fs = require("fs");
-module.exports.run = async (bot,message,args) => {
+module.exports.run = (bot,message,args) => {
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("У вас нет прав");
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!args[0]) return bot.send("Вы не указали пользователя");
@@ -8,12 +8,12 @@ module.exports.run = async (bot,message,args) => {
     if(!args[1]) return bot.send("Укажите время в секундах");
     let role = message.guild.roles.find(r => r.name === "Muted");
     if(!role){
-        role = await message.guild.createRole({
+        role = message.guild.createRole({
             name:"Muted",
             permissions:[]
         });
-        message.guild.channels.forEach(async (channel,id) => {
-            await channel.overwritePermissions(role,{
+        message.guild.channels.forEach((channel,id) => {
+            channel.overwritePermissions(role,{
                 SEND_MESSAGES:false,
                 ADD_REACTIONS:false
             });

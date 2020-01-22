@@ -1,6 +1,6 @@
 const Discord = module.require("discord.js");
 const fs = require("fs");
-module.exports.run = async (bot,message,args) => {
+module.exports.run = (bot,message,args) => {
     try{
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("У вас нет прав");
     if(args[0]>100) return bot.send("Укажите значение меньше 100");

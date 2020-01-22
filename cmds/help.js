@@ -1,6 +1,6 @@
 const Discord = module.require("discord.js");
 const fs = require("fs");
-module.exports.run = async (bot,message,args) => {
+module.exports.run = (bot,message,args) => {
     let comand = new Discord.RichEmbed()
     .setDescription("Команды бота")
     .setColor('#e22216')
