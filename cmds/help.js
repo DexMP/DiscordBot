@@ -5,6 +5,7 @@ module.exports.run = (bot,message,args) => {
     .setDescription("Команды бота")
     .setColor('#e22216')
     .addField("Пользователь",message.author.username)
+    .addField("/info", "Информмация о боте")
     .addField("/ban", "Бан игрока")
     .addField("/clear", "Очистка сообщений")
     .addField("/kick", "Пнуть пользователя с сервера")

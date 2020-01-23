@@ -1,7 +1,6 @@
 const Discord = module.require("discord.js");
 const fs = require("fs");
 module.exports.run = (bot,message,args) => {
-    message.channel.send('');
     let embed = new Discord.RichEmbed()
     .setDescription("Информация о боте")
     .setColor('#ffcc00')
